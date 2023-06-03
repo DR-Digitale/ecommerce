@@ -1,0 +1,1 @@
+export const CART_ENDPOINT = `${process.env.NEXT_PUBLIC_BASE_URL}wp-json/rae/v1/cart/items/`

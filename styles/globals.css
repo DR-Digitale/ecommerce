@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Montserrat+Subrayada:wght@400;700&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .spacing {
+    @apply pb-6 md:pb-8 xl:pb-10
+  }
+
+  .button-hover {
+    @apply hover:text-accent transition-all duration-500 ease-out 
+  }
+
+  .link-hover {
+    @apply hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] bg-clip-text hover:text-fill-transparent transition-all duration-500 ease-out 
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-bl from-[#88319C] to-[#A79280] bg-clip-text text-fill-transparent transition-all duration-500 ease-out 
+  }
+
+  .tag-hover {
+    @apply relative hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out hover:bg-opacity-0
+  }
+
+  .card-button-hover {
+    @apply relative hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out hover:bg-opacity-0
+  }
+
+  .quantity-right-hover {
+    @apply relative hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out hover:bg-opacity-0
+  }
+
+  .quantity-left-hover {
+    @apply relative hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out hover:bg-opacity-0
+  }
+  
+  .button-accent {
+    @apply flex items-center justify-center gap-4 py-4 px-8 rounded-[64px] text-white font-semibold
+  }
+
+  .button-outline {
+    @apply bg-white flex items-center justify-center gap-4 py-4 px-8 rounded-[64px] border border-surface text-accent hover:border-accent transition-all duration-300 ease-out
+  }
+
+  .button-outline-white {
+    @apply flex items-center justify-center gap-4 py-4 px-8 rounded-[64px] border border-white text-white hover:border-accent transition-all duration-300 ease-out
+  }
+
+  .tag-productCard {
+    @apply py-1 px-4 bg-background border border-foreground rounded-[64px]
+  }
+
+  .tag-singleProduct {
+    @apply py-1 px-4 border border-foreground rounded-[64px]
+  }
+
+  .shoe-size {
+    @apply flex flex-col divide-y divide-grey-darker text-grey-darker bg-grey-lightest px-2 py-1 rounded-b-lg min-w-[40px] items-center
+  }
+  .shoe-size.active {
+    @apply  divide-white text-white bg-accent rounded-b-lg
+  }
+  .shoe-size-filter {
+    @apply flex flex-col justify-center items-center divide-y divide-grey-darker text-grey-darker bg-halftone px-2 py-1 rounded-b-lg min-w-[40px] hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out
+  }
+  .shoe-size-filter.active {
+    @apply  divide-white text-white bg-foreground hover:bg-gradient-to-bl hover:from-[#A79280] hover:to-[#A79280]
+  }
+
+  .shoe-size-product {
+    @apply flex flex-col justify-center items-center divide-y divide-white text-white px-2 py-1 rounded-lg min-w-[40px] text-center opacity-[0.35]
+  }
+  .shoe-size-product.active {
+    @apply hover:bg-white hover:bg-opacity-20 opacity-100
+  }
+  .shoe-size-product.disabled {
+    @apply cursor-not-allowed
+  }
+
+  .shoe-size-product.active.selected {
+    @apply   rounded-b-lg border border-white bg-white bg-opacity-20
+  }
+
+  .button-filter {
+    @apply flex items-center gap-4 font-semibold bg-halftone border border-halftone text-surface rounded-[64px] py-3 px-8 hover:bg-gradient-to-bl hover:from-[#88319C] hover:to-[#A79280] hover:text-white transition-all duration-500 ease-out
+  }
+
+  .button-filter.active {
+    @apply bg-background border-foreground
+  }
+
+  .button-slipper {
+    @apply w-full py-4 inline-flex items-center justify-center gap-4 border-t border-halftone
+  }
+
+  .button-commode {
+    @apply w-full py-4 inline-flex items-center justify-center gap-4 bg-background rounded-b-[32px]
+  }
+
+  .button-addToCart {
+    @apply py-4 px-8 inline-flex items-center justify-center gap-4 bg-background rounded-[64px] hover:bg-white transition-all duration-500 ease-out
+  }
+
+  .prev-reassurance, .next-reassurance {
+    @apply w-[88px] h-14 rounded-[32px] bg-accent border border-accent text-white
+  }
+
+  .prev-reassurance.swiper-button-disabled, .next-reassurance.swiper-button-disabled {
+    @apply bg-transparent text-accent border-surface
+  }
+
+  .prev-color-filter, .next-color-filter {
+    @apply flex items-center justify-center h-[88px] w-14 rounded-[32px] bg-accent border border-accent text-white -translate-x-[20px]
+  }
+
+  .prev-color-filter.swiper-button-disabled, .next-color-filter.swiper-button-disabled {
+    @apply bg-transparent text-surface border-surface opacity-100
+  }
+
+  .next-color-filter {
+    @apply rotate-15
+  }
+
+  .prev-color-filter {
+    @apply -rotate-15
+  }
+
+  .wrapper {
+    @apply w-full px-6 sm:px-12 md:px-16 lg:px-20 xl:px-0 xl:w-[84%] mx-auto
+  }
+
+  .input-style {
+    @apply w-full border-x-0 border-t-0 border-b-grey-lighter placeholder:text-grey-darker focus:ring-accent focus:ring-offset-accent focus:border-accent pl-0
+  }
+  
+  .textarea {
+    @apply w-full resize-none border-grey-lighter placeholder:text-grey-darker focus:border-accent focus:ring-accent
+  }
+
+  .hidden-tab {
+    @apply fixed top-px left-px w-px h-0 p-0 -mx-px overflow-hidden whitespace-nowrap border-0
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 500;
+  color: #070606;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: calc(100vh - 76px);
+}
+
+.slider-blob {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.cta {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.gradient-mixte {
+  background: linear-gradient(228.76deg, #0089A9 0%, #88319C 57.29%, #A79280 89.06%);
+}
+
+.gradient-girly {
+  background: linear-gradient(228.76deg, #88319C 0%, #A79280 100%);
+}
+
+.gradient-boy {
+  background: linear-gradient(228.76deg, #0089A9 0%, #A79280 100%);
+}
+
+.product-color:nth-child(2) {
+  transform: translateY(2px);
+}
+
+.product-color:nth-child(3) {
+  transform: translateY(-8px);
+}
+
+.product-color-side:nth-child(2) {
+  transform: translateX(2px);
+}
+
+.product-color-side:nth-child(3) {
+  transform: translateX(-8px);
+}
+
+@media only screen and (min-width: 1080px) {
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+  }
+  
+  h3 {
+    font-size: 2.25rem;
+  }
+
+  .linear-background {
+    background: linear-gradient(180deg, #FFFCFA 33.71%, #FFFCFA 50.63%, #FFFFFF 80.8%);
+  }
+  
+  .hero-grid {
+    grid-template-columns: 40vw 7vw 7vw 46vw;
+    grid-template-rows: 53vh 47vh;
+  }
+
+  .welcome {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding-left: 128px;
+    padding-top: 97px;
+  }
+  
+  .cta {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  
+  .slider-blob {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero-grid {
+    grid-template-columns: 34vw 6vw 6vw 54vw;
+    grid-template-rows: 53vh 47vh;
+  }
+}
+
+
+.button-accent {
+  background-image: linear-gradient(to bottom left, #88319C,#A79280 );
+  transition: background-image 1s ease-out;
+  background-size: 200% 200%;
+  background-position: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-accent:hover {
+  background-position: 0;
+}
+
+.tag-hover:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, #88319C,#A79280 );
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.quantity-right-hover:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, #88319C,#A79280 );
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 0 64px 64px 0 ;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.quantity-left-hover:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, #88319C,#A79280 );
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 64px 0 0 64px  ;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+.card-button-hover:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, #88319C,#A79280 );
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 64px 0 0 64px  ;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.tag-hover:hover:before {
+  opacity: 1;
+}
+
+.swiper-button-disabled {
+  border: 1px solid #070606;
+  color: #88319C;
+  background: transparent;
+}
+
+.tab-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)
+}
+
+.cart-shadow {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.04);
+}
+
+.card_price {
+  border: #0089A9 1px solid;
+  border-radius: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0089A9;
+  color: white;
+}
+
+.card_price .woocommerce-Price-amount {
+  padding: 4px 16px;
+}
+
+.woocommerce-Price-amount {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_price del .woocommerce-Price-amount {
+  border-radius: 64px 0 0 64px;
+  background-color: white;
+  color: #070606;
+  text-decoration: line-through;
+}
+
+.card_price del {
+  color: #070606;
+  text-decoration: line-through;
+}
+
+.card_price ins .woocommerce-Price-amount {
+  border-radius: 0 64px 64px 0;
+  background-color: #0089A9;
+}
+
+.card_price ins {
+  text-decoration: none;
+}
+
+.card_price ins .woocommerce-Price-amount bdi {
+  border-radius: 0 64px 64px 0;
+}
+
+@media (min-width: 375px) and (max-height: 667px) {
+  .hero-product {
+    height: 155vh;
+  }
+}
+
+@media (min-width:768px) and (max-height:601px){
+  .blob {
+    width: 60vw !important;
+    height: 60vw !important;
+  }
+
+  .main-blob {
+    transform: translate(88%, -28%) !important;
+  }
+
+  .blob-deco {
+    width: 100vw;
+    height: 100vw;
+    top: 1% !important;
+    left: -34% !important;
+  }
+}
+@media (min-width:768px) and (max-height:1024px){
+
+  .blob-deco {
+    width: 97vw;
+    height: 92vw;
+    top: 22% !important;
+    left: -14% !important;
+  }
+}
+
+@media (min-width:820px) and (max-height:1180px){
+
+  .blob-deco {
+    width: 96vw;
+    height: 91vw;
+    top: 29% !important;
+    left: -14% !important;
+  }
+}
+@media (min-width:912px) and (max-height:1368px){
+
+  .blob-deco {
+    width: 96vw;
+    height: 91vw;
+    top: 29% !important;
+    left: -14% !important;
+  }
+}
+
+@media (min-width:1024px) and (min-height:1366px){
+  .blob {
+    width: 115vw !important;
+    height: 115vw !important;
+  }
+
+  .main-blob {
+    transform: translate(5%, -28%) !important;
+  }
+
+  .blob-deco {
+    width: 100vw;
+    height: 100vw;
+    top: 40% !important;
+    left: -34% !important;
+  }
+
+  .sticker-mobil {
+    bottom: 37% !important;
+    left: -3% !important;
+  }
+}
+
+.bg-page {
+  background-image: url(../assets/img/wiggle.svg);
+}
+
+@media only screen and (min-width: 1080px) {
+  .bg-wave-top {
+    background: url(../assets/texture/top.svg) bottom no-repeat;
+    background-size: contain;
+  }
+}
+
+:root {
+  --mss:'Montserrat Subrayada', sans-serif;
+  --quicksand:'Quicksand', sans-serif;
+  --lexend: 'Lexend Deca', sans-serif;
+  --rhd: 'Red Hat Display', sans-serif;
+}
